@@ -1,9 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const cardSchema = new Schema({
-  principle: { String },
-  principleImg: { String },
-  descriptionImg: { String },
+  principle: { type: String },
+  principleImg: { type: String },
+  descriptionImg: { type: String },
 });
 
 const cardModel = model("Card", cardSchema);
