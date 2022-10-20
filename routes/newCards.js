@@ -1,8 +1,9 @@
 const express = require("express");
-const { createCard } = require("../controllers/newCard");
+const { newCard } = require("../controllers/newCard");
+
 const newCardRouter = express.Router();
 
-newCardRouter.route("/").post();
+newCardRouter.route("/createyourowncard").post(newCard);
 
 module.exports = {
   newCardRouter,
