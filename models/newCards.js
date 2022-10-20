@@ -1,16 +1,13 @@
 const { Schema, model } = require("mongoose");
 
-const createYourOwnCardSchema = new Schema({
+const newCardSchema = new Schema({
   principleText: { type: String, required: true },
   descriptionText: { type: String, required: true },
-  author: { }
+  author: { type: String, required: true },
 });
 
-const createYourOwnCardModel = model(
-  "Create your own Card",
-  createYourOwnCardSchema
-);
+const newCardModel = model("Create your own Card", newCardSchema);
 
 module.exports = {
-  createYourOwnCardModel,
+  newCardModel,
 };
