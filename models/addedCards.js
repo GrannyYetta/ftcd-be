@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const createYourOwnCardSchema = new Schema({
   principleText: { type: String, required: true },
   descriptionText: { type: String, required: true },
+  author: { }
 });
 
 const createYourOwnCardModel = model(

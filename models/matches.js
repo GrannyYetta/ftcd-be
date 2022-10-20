@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const matchSchema = new Schema({
   score: { type: Number },
-  NrOfPlayers: { type: Number }, // should this be an array?
+  NrOfPlayers: { type: Number }, 
   turns: { type: Number },
   matchCompleted: { type: Boolean },
 });
