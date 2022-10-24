@@ -6,7 +6,7 @@ const createCards = async (req, res, next) => {
     const memCard = await cardModel.create(body);
     res.json(memCard);
   } catch (error) {
-    res.json({ message: error.message });
+    next(error.message);
   }
 };
 

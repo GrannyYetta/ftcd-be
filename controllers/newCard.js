@@ -2,15 +2,24 @@ const { newCardModel } = require("../models/newCard");
 
 const createCard = async (req, res, next) => {
   try {
-    const { cardCover } = req;
-    const addedCard = await newCardModel.create(cardCover);
+    const newCard = req;
+    const addedCard = await newCardModel.create(newCard);
     res.json(addedCard);
   } catch (error) {
     res.json({ message: error.message });
   }
 };
 
-const newCard = async (req, res, next) => {
+// const addedCard = async (req, res, next) => {
+//   try {
+//     const newbie = await newCardModel.find({});
+//     res.json(newbie);
+//   } catch (error) {
+//     res.json({ message: error.message });
+//   }
+// };
+
+const addedCard = async (req, res, next) => {
   try {
     const newbie = await newCardModel.find({});
     res.json(newbie);
@@ -21,5 +30,5 @@ const newCard = async (req, res, next) => {
 
 module.exports = {
   createCard,
-  newCard,
+  addedCard,
 };
