@@ -12,7 +12,9 @@ const createCards = async (req, res, next) => {
 
 const getCardImages = async (req, res, next) => {
   try {
-    const cards = await cardModel.find({});
+    const level = +req.query.level || 12;
+    const query = { principle: { $lte: level } };
+    const cards = await cardModel.find(query);
     res.json(cards);
   } catch (error) {
     res.json({ message: error.message });
