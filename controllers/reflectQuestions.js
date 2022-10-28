@@ -10,7 +10,7 @@ const createQuestions = async (req, res, next) => {
   }
 };
 
-const getQuestions = async (res, req, next) => {
+const getQuestions = async (req, res, next) => {
   try {
     const cardPop = await questionModel.find({});
     res.json(cardPop);
