@@ -8,6 +8,7 @@ const { newCardRouter } = require("./routes/newCards");
 const { matchesRouter } = require("./routes/matches");
 
 const { errorHandler } = require("./middelwares/errorHandler");
+const { questionImagesRouter } = require("./routes/reflectQuestions");
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -21,6 +22,8 @@ app.use("/cardimages", cardImagesRouter);
 app.use("/newcard", newCardRouter);
 
 app.use("/matches", matchesRouter);
+
+app.use("./questions", questionImagesRouter);
 
 app.get("/", (req, res) => {
   res.send("Welcome to the Online Game for the Feminist Tech Card Deck");
