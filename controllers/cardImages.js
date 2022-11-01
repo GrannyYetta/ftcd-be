@@ -1,4 +1,5 @@
 const { cardModel } = require("../models/cardImages");
+const { questionModel } = require("../models/reflectQuestions");
 
 const createCards = async (req, res, next) => {
   try {
@@ -21,7 +22,18 @@ const getCardImages = async (req, res, next) => {
   }
 };
 
+const displayCardImages = async (req, res, next) => {
+  try {
+    const cards = await cardModel.find({});
+    const questions = await questionModel.find({});
+    res.json({ cards, questions });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
+
 module.exports = {
   getCardImages,
   createCards,
+  displayCardImages,
 };
